@@ -1,0 +1,29 @@
+{
+  "name": "@car-listing/listing-seeder",
+  "version": "1.0.0",
+  "description": "Seeder Service - Discovers car listings from Facebook Marketplace",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "lint": "eslint src --ext .ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "playwright": "^1.49.1",
+    "amqplib": "^0.10.4",
+    "knex": "^3.1.0",
+    "pg": "^8.13.1",
+    "uuid": "^11.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "@types/amqplib": "^0.10.5",
+    "@types/uuid": "^10.0.0",
+    "typescript": "^5.7.2",
+    "tsx": "^4.19.2"
+  }
+}
+
