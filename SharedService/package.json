@@ -1,0 +1,11 @@
+{
+  "name": "@car-listing/shared",
+  "version": "1.0.0",
+  "description": "Shared models and types for Car Listing Service",
+  "type": "module",
+  "main": "models/index.js",
+  "types": "models/index.d.ts",
+  "exports": {
+    "./models": "./models/index.js"
+  }
+}
