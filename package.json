@@ -1,0 +1,27 @@
+{
+  "name": "backend-listing",
+  "version": "1.0.0",
+  "description": "Microservice based listing service for scraping and serving Facebook Marketplace data",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "docker compose -f docker-compose.yml up --build",
+    "dev:infra": "docker compose -f docker-compose.yml up -d postgres rabbitmq",
+    "dev:api": "cd ListingAPI && npm run dev",
+    "dev:scheduler": "cd ListingScheduler && npm run dev",
+    "dev:seeder": "cd ListingSeeder && npm run dev",
+    "dev:extractor": "cd ListingExtractor && npm run dev",
+    "build": "docker compose -f docker-compose.yml build",
+    "start": "docker compose -f docker-compose.yml up -d",
+    "stop": "docker compose -f docker-compose.yml down",
+    "stop:clean": "docker compose -f docker-compose.yml down -v",
+    "logs": "docker compose -f docker-compose.yml logs -f",
+    "logs:api": "docker compose -f docker-compose.yml logs -f listing-api",
+    "logs:seeder": "docker compose -f docker-compose.yml logs -f listing-seeder",
+    "logs:extractor": "docker compose -f docker-compose.yml logs -f listing-extractor",
+    "scale:extractor": "docker compose -f docker-compose.yml up -d --scale listing-extractor=5"
+  },
+  "author": "",
+  "license": "MIT"
+}
+
