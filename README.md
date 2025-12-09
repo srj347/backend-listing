@@ -8,7 +8,7 @@ A distributed microservices platform for automated car listing from Facebook Mar
 
 1. [Technologies Used](#technologies-used)
 2. [API Details](#api-details)
-3. [Low Level Design](#low-level-design)
+3. [Data Flow](#ldata-flow)
 4. [High Level Design](#high-level-design)
 5. [Important Decisions](#important-decisions)
 6. [Future Improvements](#future-improvements)
@@ -193,6 +193,27 @@ A distributed microservices platform for automated car listing from Facebook Mar
 
 ---
 
+## Future Improvements
+
+### Performance Optimizations
+- [ ] **Browser pool** - Reuse browser instances instead of launching per-job
+- [ ] **Batch database inserts** - Bulk upsert instead of individual queries
+- [ ] **Redis caching** - Cache frequently accessed listings
+
+### Reliability Enhancements
+- [ ] **Retry with backoff** - Exponential retry for transient failures
+
+### Extraction Improvements
+- [ ] **AI based parsing** - Use NLP for better listing extraction
+- [ ] **Proxy rotation** - Avoid IP blocking with proxy pool
+
+### Feature Additions
+- [ ] **Price history** - Track price changes over time
+- [ ] **Notifications** - Alert users on new listings matching criteria
+- [ ] **Admin dashboard** - UI for job management and monitoring
+
+---
+
 ## Getting Started
 
 ### Prerequisites
@@ -233,24 +254,3 @@ curl -X POST http://localhost:8080/api/v1/listings/refresh \
   -H "Content-Type: application/json" \
   -d '{"url": "https://www.facebook.com/marketplace/manila/cars?minPrice=300000&maxPrice=300001&exact=true"}'
 ```
-
----
-
-## Future Improvements
-
-### Performance Optimizations
-- [ ] **Browser pool** - Reuse browser instances instead of launching per-job
-- [ ] **Batch database inserts** - Bulk upsert instead of individual queries
-- [ ] **Redis caching** - Cache frequently accessed listings
-
-### Reliability Enhancements
-- [ ] **Retry with backoff** - Exponential retry for transient failures
-
-### Extraction Improvements
-- [ ] **AI based parsing** - Use NLP for better listing extraction
-- [ ] **Proxy rotation** - Avoid IP blocking with proxy pool
-
-### Feature Additions
-- [ ] **Price history** - Track price changes over time
-- [ ] **Notifications** - Alert users on new listings matching criteria
-- [ ] **Admin dashboard** - UI for job management and monitoring
