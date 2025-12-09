@@ -1,0 +1,29 @@
+{
+  "name": "@car-listing/listing-scheduler",
+  "version": "1.0.0",
+  "description": "Graphile Worker Scheduler for Car Listing Service",
+  "type": "module",
+  "main": "dist/worker.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/worker.js",
+    "dev": "tsx watch src/worker.ts",
+    "lint": "eslint src --ext .ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "graphile-worker": "^0.16.6",
+    "knex": "^3.1.0",
+    "pg": "^8.13.1",
+    "amqplib": "^0.10.4",
+    "uuid": "^11.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "@types/amqplib": "^0.10.5",
+    "@types/uuid": "^10.0.0",
+    "typescript": "^5.7.2",
+    "tsx": "^4.19.2"
+  }
+}
+
