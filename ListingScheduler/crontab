@@ -1,0 +1,11 @@
+# Graphile Worker Crontab
+# Format: <cron expression> <task_identifier> ?<options> <payload>
+
+# Main scraping job - runs every one hour
+# URL is picked from SCRAPE_URL environment variable
+
+# Development
+*/5 * * * * trigger_discovery {}
+
+# Production
+# 0 * * * * trigger_discovery {}
